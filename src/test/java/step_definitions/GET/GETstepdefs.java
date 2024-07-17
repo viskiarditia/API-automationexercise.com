@@ -1,46 +1,55 @@
 package step_definitions.GET;
 
+import Initial.InitialAPI;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import jdk.vm.ci.meta.Constant;
+import io.restassured.module.jsv.JsonSchemaValidator;
+import net.serenitybdd.annotations.Steps;
 import net.serenitybdd.rest.SerenityRest;
 
+import java.io.File;
+import java.net.URI;
+
 public class GETstepdefs {
-    @Given("User Set Paramater API Products List")
-    public void userSetParamaterAPIProductsList() {
-//        SerenityRest.given().get(Constant.)
+ @Steps
+ InitialAPI initialAPI;
+
+    @Given("Dapatkan Semua Daftar Produk")
+    public void DapatkanSemuaDaftarProduk() {
+     SerenityRest.given().get(initialAPI.getListProduct);
     }
 
-    @Given("User Set Parameter API Products List")
-    public void userSetParameterAPIProductsList() {
-    }
 
-    @Given("Set Parameter All Brands List")
-    public void setParameterAllBrandsList() {
-
+    @Given("Tetapkan Parameter Semua Daftar Merek")
+    public void TetapkanParameterSemuaDaftarMerek() {
+       SerenityRest.given().get(initialAPI.brandsList);
     }
 
     @Given("Set Parameter user account detail by email")
     public void setParameterUserAccountDetailByEmail() {
+       SerenityRest.given().get(initialAPI.getUserDetailByEmail);
     }
 
-    @Then("Status Code Should be {int} OK")
-    public void statusCodeShouldBeOK(int data) {
+    @Then("Kode Status Seharusnya {int} OK")
+    public void KodeStatusSeharusnyaOK(int data) {
+       SerenityRest.then().statusCode(data);
     }
 
-    @And("Validate GET Products List json schema")
-    public void validateGETProductsListJsonSchema() {
+    @And("Validasi skema json Daftar Produk GET")
+    public void ValidasiskemajsonDaftarProdukGET() {
+       File JsonValidate = new File(InitialAPI.JSON_SCHEMA_VALIDATOR +"GET/getProductList.json");
+      SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(JsonValidate));
     }
 
 
-    @And("Validate GET All Brands json schema")
-    public void validateGETAllBrandsJsonSchema() {
+    @And("Validasi skema json GET All Brands")
+    public void ValidasiskemajsonGETAllBrands() {
     }
 
 
-    @And("Validate GET user account detail by email json schema")
-    public void validateGETUserAccountDetailByEmailJsonSchema() {
+    @And("Validasi detail akun pengguna GET melalui skema json email")
+    public void ValidasidetailakunpenggunaGETmelaluiskemajsonemail() {
     }
 
 }

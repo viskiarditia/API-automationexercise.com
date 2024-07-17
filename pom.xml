@@ -14,57 +14,67 @@
         <serenity.version>2.4.51</serenity.version>
         <serenity.maven.version>2.4.51</serenity.maven.version>
         <serenity.cucumber.version>2.4.51</serenity.cucumber.version>
-        <logback.version>1.2.3</logback.version>
+        <logback.version>1.4.12</logback.version>
         <encoding>UTF-8</encoding>
-        <tags></tags>
+        <tags/>
         <parallel.tests>4</parallel.tests>
-        <webdriver.base.url></webdriver.base.url>
+        <webdriver.base.url/>
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
-            <version>${logback.version}</version>
+            <version>1.5.6</version>
+            <scope>test</scope>
         </dependency>
 
         <!-- Serenity Dependencies -->
+        <!-- https://mvnrepository.com/artifact/net.serenity-bdd/serenity-core -->
         <dependency>
             <groupId>net.serenity-bdd</groupId>
             <artifactId>serenity-core</artifactId>
-            <version>${serenity.version}</version>
+            <version>4.1.20</version>
             <scope>test</scope>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/junit/junit -->
         <dependency>
-            <groupId>net.serenity-bdd</groupId>
-            <artifactId>serenity-junit</artifactId>
-            <version>${serenity.version}</version>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.2</version>
             <scope>test</scope>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/io.rest-assured/rest-assured -->
         <dependency>
-            <groupId>net.serenity-bdd</groupId>
-            <artifactId>serenity-rest-assured</artifactId>
-            <version>${serenity.version}</version>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>rest-assured</artifactId>
+            <version>5.4.0</version>
             <scope>test</scope>
         </dependency>
+
+        <!-- https://mvnrepository.com/artifact/net.serenity-bdd/serenity-screenplay -->
         <dependency>
             <groupId>net.serenity-bdd</groupId>
             <artifactId>serenity-screenplay</artifactId>
-            <version>${serenity.version}</version>
+            <version>4.1.20</version>
             <scope>test</scope>
         </dependency>
+
+        <!-- https://mvnrepository.com/artifact/net.serenity-bdd/serenity-screenplay-rest -->
         <dependency>
             <groupId>net.serenity-bdd</groupId>
             <artifactId>serenity-screenplay-rest</artifactId>
-            <version>${serenity.version}</version>
+            <version>4.1.20</version>
             <scope>test</scope>
         </dependency>
+
+        <!-- https://mvnrepository.com/artifact/net.serenity-bdd/serenity-cucumber -->
         <dependency>
             <groupId>net.serenity-bdd</groupId>
-            <artifactId>serenity-cucumber6</artifactId>
-            <version>${serenity.cucumber.version}</version>
-            <scope>test</scope>
+            <artifactId>serenity-cucumber</artifactId>
+            <version>4.1.20</version>
         </dependency>
+
 
 <!--        &lt;!&ndash; libraries used directly from serenity-core&ndash;&gt;-->
 <!--        <dependency>-->
@@ -94,12 +104,6 @@
             <scope>test</scope>
         </dependency>
 
-<!--        <dependency>-->
-<!--            <groupId>io.rest-assured</groupId>-->
-<!--            <artifactId>xml-path</artifactId>-->
-<!--            <version>4.3.3</version>-->
-<!--        </dependency>-->
-
         <!-- https://mvnrepository.com/artifact/io.rest-assured/xml-path -->
         <dependency>
             <groupId>io.rest-assured</groupId>
@@ -107,30 +111,35 @@
             <version>5.4.0</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/org.codehaus.groovy/groovy -->
         <dependency>
             <groupId>org.codehaus.groovy</groupId>
             <artifactId>groovy</artifactId>
-            <version>3.0.6</version>
+            <version>3.0.22</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.groovy/groovy-xml -->
         <dependency>
-            <groupId>org.codehaus.groovy</groupId>
+            <groupId>org.apache.groovy</groupId>
             <artifactId>groovy-xml</artifactId>
-            <version>3.0.6</version>
+            <version>4.0.22</version>
         </dependency>
+
 
         <!-- General test libraries -->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.13.1</version>
+            <version>4.13.2</version>
             <scope>test</scope>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.assertj/assertj-core -->
         <dependency>
             <groupId>org.assertj</groupId>
             <artifactId>assertj-core</artifactId>
-            <version>3.6.2</version>
+            <version>3.26.3</version>
             <scope>test</scope>
         </dependency>
+
         <dependency>
             <groupId>org.hamcrest</groupId>
             <artifactId>hamcrest</artifactId>

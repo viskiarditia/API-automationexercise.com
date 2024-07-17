@@ -6,7 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="API-automationexercise.com" />
+        <module name="serenity-rest-starter" />
         <module name="BDDSauceDemo" />
         <module name="Template_ API_ AUTO" />
         <module name="Template_BDD" />
