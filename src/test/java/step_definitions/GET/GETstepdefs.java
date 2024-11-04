@@ -45,11 +45,15 @@ public class GETstepdefs {
 
     @And("Validasi skema json GET All Brands")
     public void ValidasiskemajsonGETAllBrands() {
+       File JsonValidate = new File(InitialAPI.JSON_SCHEMA_VALIDATOR +"GET/getBrandsList.json");
+       SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(JsonValidate));
     }
 
 
     @And("Validasi detail akun pengguna GET melalui skema json email")
     public void ValidasidetailakunpenggunaGETmelaluiskemajsonemail() {
+       File JsonValidate = new File(InitialAPI.JSON_SCHEMA_VALIDATOR +"GET/getUserAccountDetailByEmail.json");
+       SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(JsonValidate));
     }
 
 }

@@ -10,7 +10,7 @@ public class InitialAPI {
 
     public URI getUserDetailByEmail = URI.create(URL+"api/getUserDetailByEmail");
     public URI getListProduct = URI.create(URL+"api/productsList");
-    public URI brandsList = URI.create(URL+"api/searchProduct");
+    public URI brandsList = URI.create(URL+"api/brandsList");
     public URI searchProduct = URI.create(URL + "api/searchProduct");
     public URI login = URI.create(URL + "api/verifyLogin");
     public URI createAccount = URI.create(URL + "api/createAccount");
